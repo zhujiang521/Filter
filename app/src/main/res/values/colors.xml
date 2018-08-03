@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black">#000000</color>
+    <color name="black_1e">#1e1e1e</color>
+    <color name="black_30">#303030</color>
+    <color name="black_33">#333333</color>
+    <color name="black_3f">#3f3f3f</color>
+    <color name="black_5c">#5c5c5c</color>
+    <color name="black_66">#666666</color>
+    <color name="black_8f">#8f8f8f</color>
+    <color name="black_99">#999999</color>
+    <color name="black_f8">#f8f8f8</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="gray_7533">#75333333</color>
+    <color name="gray_46">#464646</color>
+    <color name="gray_7d">#7d7d7d</color>
+    <color name="gray_8d">#8d8d8d</color>
+    <color name="gray_9c">#9c9c9c</color>
+    <color name="gray_b5">#b5b5b5</color>
+    <color name="gray_b7">#b7b7b7</color>
+    <color name="gray_c7">#c7c7c7</color>
+    <color name="gray_d8">#d8d8d8</color>
+    <color name="gray_f3">#f3f3f3</color>
+    <color name="gray_f8">#f8f8f8</color>
+    <color name="gray_fc">#fcfcfc</color>
+
+    <color name="red_f4">#f46a69</color>
+    <color name="red_f5">#f57273</color>
+    <color name="red_fa">#fa7c7c</color>
+    <color name="red_ff">#ff5454</color>
+    <color name="red_ee">#ee5c5c</color>
+
+    <color name="green_57">#57c09f</color>
+    <color name="green_5d">#5dcaa7</color>
+
+    <color name="blue_ff">#FFD6EFFC</color>
+    <color name="blue_13">#13b0fd</color>
+    <color name="blue_title">#17acf6</color>
+    <color name="blue_21">#218dfc</color>
+    <color name="blue_2e">#2ea1fa</color>
+    <color name="blue_43">#43abff</color>
+    <color name="blue_48">#48b1ff</color>
+    <color name="blue_49">#49A3FE</color>
+    <color name="blue_4e">#4eb0f1</color>
+
+    <color name="orange_f7">#f7a805</color>
+
+    <color name="yellow_b3">#b39b61</color>
+
+    <color name="purple_bf">#bf5dee</color>
+    <color name="purple_55">#553de6</color>
+</resources>
