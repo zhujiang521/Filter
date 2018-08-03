@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvFlow;
+    private TextView one, two, three;
 
     private FlowPopWindow flowPopWindow;
     private List<FiltrateBean> dictList = new ArrayList<>();
@@ -26,12 +26,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        tvFlow = findViewById(R.id.tv_flow);
-        tvFlow.setOnClickListener(new View.OnClickListener() {
+        one = findViewById(R.id.one);
+        two = findViewById(R.id.two);
+        three = findViewById(R.id.three);
+        one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 flowPopWindow = new FlowPopWindow(MainActivity.this, dictList);
-                flowPopWindow.showAsDropDown(tvFlow);
+                flowPopWindow.showAsDropDown(one);
                 flowPopWindow.setOnConfirmClickListener(new FlowPopWindow.OnConfirmClickListener() {
                     @Override
                     public void onConfirmClick() {
@@ -45,7 +47,61 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         if (!TextUtils.isEmpty(sb.toString()))
-                            Toast.makeText(MainActivity.this, sb.toString(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "111"+sb.toString(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+            }
+        });
+
+
+
+        two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flowPopWindow = new FlowPopWindow(MainActivity.this, dictList);
+                flowPopWindow.showAsDropDown(one);
+                flowPopWindow.setOnConfirmClickListener(new FlowPopWindow.OnConfirmClickListener() {
+                    @Override
+                    public void onConfirmClick() {
+                        StringBuilder sb = new StringBuilder();
+                        for (FiltrateBean fb : dictList) {
+                            List<FiltrateBean.Children> cdList = fb.getChildren();
+                            for (int x = 0; x < cdList.size(); x++) {
+                                FiltrateBean.Children children = cdList.get(x);
+                                if (children.isSelected())
+                                    sb.append(fb.getTypeName() + ":" + children.getValue() + "；");
+                            }
+                        }
+                        if (!TextUtils.isEmpty(sb.toString()))
+                            Toast.makeText(MainActivity.this, "222"+sb.toString(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+            }
+        });
+
+
+
+        three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flowPopWindow = new FlowPopWindow(MainActivity.this, dictList);
+                flowPopWindow.showAsDropDown(one);
+                flowPopWindow.setOnConfirmClickListener(new FlowPopWindow.OnConfirmClickListener() {
+                    @Override
+                    public void onConfirmClick() {
+                        StringBuilder sb = new StringBuilder();
+                        for (FiltrateBean fb : dictList) {
+                            List<FiltrateBean.Children> cdList = fb.getChildren();
+                            for (int x = 0; x < cdList.size(); x++) {
+                                FiltrateBean.Children children = cdList.get(x);
+                                if (children.isSelected())
+                                    sb.append(fb.getTypeName() + ":" + children.getValue() + "；");
+                            }
+                        }
+                        if (!TextUtils.isEmpty(sb.toString()))
+                            Toast.makeText(MainActivity.this, "333"+sb.toString(), Toast.LENGTH_LONG).show();
                     }
                 });
 
