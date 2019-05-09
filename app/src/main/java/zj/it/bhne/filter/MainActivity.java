@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zj.filters.FiltrateBean;
+import com.zj.filters.FlowPopWindow;
+
 import java.util.ArrayList;
 import java.util.List;
 

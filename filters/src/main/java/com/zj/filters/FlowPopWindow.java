@@ -1,4 +1,4 @@
-package zj.it.bhne.filter;
+package com.zj.filters;
 
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
