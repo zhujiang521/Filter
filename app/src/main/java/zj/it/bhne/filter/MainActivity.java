@@ -15,9 +15,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView one, two, three;
-
+    private TextView one;
+    //筛选框控件
     private FlowPopWindow flowPopWindow;
+    //筛选框数据
     private List<FiltrateBean> dictList = new ArrayList<>();
 
     @Override
@@ -30,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         one = findViewById(R.id.one);
-        two = findViewById(R.id.two);
-        three = findViewById(R.id.three);
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,61 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-        two.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                flowPopWindow = new FlowPopWindow(MainActivity.this, dictList);
-                flowPopWindow.showAsDropDown(one);
-                flowPopWindow.setOnConfirmClickListener(new FlowPopWindow.OnConfirmClickListener() {
-                    @Override
-                    public void onConfirmClick() {
-                        StringBuilder sb = new StringBuilder();
-                        for (FiltrateBean fb : dictList) {
-                            List<FiltrateBean.Children> cdList = fb.getChildren();
-                            for (int x = 0; x < cdList.size(); x++) {
-                                FiltrateBean.Children children = cdList.get(x);
-                                if (children.isSelected())
-                                    sb.append(fb.getTypeName() + ":" + children.getValue() + "；");
-                            }
-                        }
-                        if (!TextUtils.isEmpty(sb.toString()))
-                            Toast.makeText(MainActivity.this, "222"+sb.toString(), Toast.LENGTH_LONG).show();
-                    }
-                });
-
-            }
-        });
-
-
-
-        three.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                flowPopWindow = new FlowPopWindow(MainActivity.this, dictList);
-                flowPopWindow.showAsDropDown(one);
-                flowPopWindow.setOnConfirmClickListener(new FlowPopWindow.OnConfirmClickListener() {
-                    @Override
-                    public void onConfirmClick() {
-                        StringBuilder sb = new StringBuilder();
-                        for (FiltrateBean fb : dictList) {
-                            List<FiltrateBean.Children> cdList = fb.getChildren();
-                            for (int x = 0; x < cdList.size(); x++) {
-                                FiltrateBean.Children children = cdList.get(x);
-                                if (children.isSelected())
-                                    sb.append(fb.getTypeName() + ":" + children.getValue() + "；");
-                            }
-                        }
-                        if (!TextUtils.isEmpty(sb.toString()))
-                            Toast.makeText(MainActivity.this, "333"+sb.toString(), Toast.LENGTH_LONG).show();
-                    }
-                });
-
-            }
-        });
-
     }
 
 
@@ -123,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
         FiltrateBean fb1 = new FiltrateBean();
         fb1.setTypeName("性别");
         List<FiltrateBean.Children> childrenList = new ArrayList<>();
-        for (int x = 0; x < sexs.length; x++) {
+        for (String sex : sexs) {
             FiltrateBean.Children cd = new FiltrateBean.Children();
-            cd.setValue(sexs[x]);
+            cd.setValue(sex);
             childrenList.add(cd);
         }
         fb1.setChildren(childrenList);
@@ -133,9 +77,9 @@ public class MainActivity extends AppCompatActivity {
         FiltrateBean fb2 = new FiltrateBean();
         fb2.setTypeName("颜色");
         List<FiltrateBean.Children> childrenList2 = new ArrayList<>();
-        for (int x = 0; x < colors.length; x++) {
+        for (String color : colors) {
             FiltrateBean.Children cd = new FiltrateBean.Children();
-            cd.setValue(colors[x]);
+            cd.setValue(color);
             childrenList2.add(cd);
         }
         fb2.setChildren(childrenList2);
@@ -143,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
         FiltrateBean fb3 = new FiltrateBean();
         fb3.setTypeName("企业");
         List<FiltrateBean.Children> childrenList3 = new ArrayList<>();
-        for (int x = 0; x < company.length; x++) {
+        for (String s : company) {
             FiltrateBean.Children cd = new FiltrateBean.Children();
-            cd.setValue(company[x]);
+            cd.setValue(s);
             childrenList3.add(cd);
         }
         fb3.setChildren(childrenList3);
