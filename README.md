@@ -1,5 +1,7 @@
 # Filter
-这是一个实现安卓筛选框的插件，大家可以通过以下方式引用：
+这是一个实现安卓筛选框的插件，下面是演示效果：
+![https://github.com/zhujiang521/Filter/blob/master/view.gif]
+大家可以通过以下方式引用：
 添加Filter到你的项目
 
 	      implementation 'com.github.zhujiang521:Filter:1.0.0'
